@@ -39,3 +39,6 @@ Route::resource('transactions', App\Http\Controllers\API\TransactionAPIControlle
 
 Route::resource('programs', App\Http\Controllers\API\ProgramAPIController::class)
     ->except(['create', 'edit']);
+
+Route::resource('clients', App\Http\Controllers\API\ClientAPIController::class)
+    ->except(['create', 'edit']);

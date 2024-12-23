@@ -10,13 +10,17 @@ class CampaignRepository extends BaseRepository
     protected $fieldSearchable = [
         'charity_organization_id',
         'category_id',
+        'program_id',
         'title',
         'description',
         'goal_amount',
         'raised_amount',
-        'start_date',
-        'end_date',
-        'status'
+        'visits',
+        'beneficiaries_goal',
+        'beneficiaries_count',
+        'status',
+        'city',
+        'image'
     ];
 
     public function getFieldsSearchable(): array

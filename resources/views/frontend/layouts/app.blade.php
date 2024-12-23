@@ -28,7 +28,7 @@
         @include('frontend.layouts.header')
 
         <!-- Main content -->
-        <main id="maincontent" class="home-page">
+        <main id="maincontent" class="home-page {{ Route::is('campaign') || Route::is('category') || Route::is('program') ? 'donation-status padding-header ProhectDetailsBox' : '' }}">
             @yield('content')
         </main>
 

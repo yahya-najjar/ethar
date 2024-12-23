@@ -8,14 +8,20 @@
         <div class="container position-relative">
             <a href="/" class="navbar-brand"><img loading="lazy" src="{{ asset('frontend/assets/images/logo-color.png') }}" alt="منصة آيثار، منصة وطنية للعمل الخيري"></a>
             <div class="nav nav-underline align-items-center justify-content-end">
-                <a class="nav-link p-0 mt-1 pe-3" href="/auth/login">
-                    <img class="icon" src="{{ asset('frontend/assets/images/icon-profile.svg') }}" alt="تسجيل الدخول" />
-                    <span class="text-primary-blue">تسجيل الدخول</span>
-                </a>
-                <a class="nav-link p-0 ps-3 cart_count" href="/cart" id="cart">
-                    <sup class="cartCount badge d-none"></sup>
-                    <img class="icon" src="{{ asset('frontend/assets/images/icon-shopping_cart.svg') }}" alt="سلة تبرعاتك" />
-                </a>
+                @if(auth('client')->check())
+                    <a class="nav-link p-0 mt-1 pe-3" href="#" onclick="event.preventDefault(); document.getElementById('user-logout-form').submit();">
+                        <img class="icon" src="{{ asset('frontend/assets/images/icon-profile.svg') }}" alt="تسجيل الخروج" />
+                        <span class="text-primary-blue">تسجيل الخروج</span>
+                    </a>
+                    <form id="user-logout-form" action="{{ route('user.logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                @else
+                    <a class="nav-link p-0 mt-1 pe-3" href="{{ route('user.login') }}">
+                        <img class="icon" src="{{ asset('frontend/assets/images/icon-profile.svg') }}" alt="تسجيل الدخول" />
+                        <span class="text-primary-blue">تسجيل الدخول</span>
+                    </a>
+                @endif
             </div>
         </div>
     </div>
@@ -26,15 +32,24 @@
                 <span class="navbar-toggler-icon" aria-hidden="true"></span>
             </button>
             <a href="#maincontent" class="d-block d-md-none btnSkipToMainContent">التخطي إلى المحتوى الرئيسي</a>
-            <a href="/" class="navbar-brand d-block d-md-none me-0 ps-3"><img loading="lazy" src="{{ asset('frontend/assets/images/ehsan-logo-slogan.svg') }}" alt="منصة آيثار، منصة وطنية للعمل الخيري"></a>
+            <a href="/" class="navbar-brand d-block d-md-none me-0 ps-3"><img loading="lazy" src="{{ asset('frontend/assets/images/logo-color.png') }}" alt="منصة آيثار، منصة وطنية للعمل الخيري"></a>
             <div class="d-block d-md-none d-flex align-items-end me-3">
                 <a class="border-0 me-3 cart_count" href="/cart" id="cart">
                     <sup class="cartCount badge d-none"></sup>
                     <img class="icon" src="{{ asset('frontend/assets/images/icon-shopping_cart.svg') }}" alt="سلة تبرعاتك" />
                 </a>
-                <a href="/auth/login">
-                    <i class="fas fa-user" aria-label="تسجيل الدخول" style="font-size: 23px;"></i>
-                </a>
+                @if(auth('client')->check())
+                    <a class="" href="#" onclick="event.preventDefault(); document.getElementById('user-logout-form').submit();">
+                        <i class="fas fa-user" aria-label="تسجيل الخروج" style="font-size: 23px;"></i>
+                    </a>
+                    <form id="user-logout-form" action="{{ route('user.logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                @else
+                    <a href="{{ route('user.login') }}">
+                        <i class="fas fa-user" aria-label="تسجيل الدخول" style="font-size: 23px;"></i>
+                    </a>
+                @endif
             </div>
             <nav class="navbar-collapse offcanvas offcanvas-start w-75" id="navbarMenu" aria-label="القائمة الجانبية"
                  aria-describedby="mainMenuDescription">
@@ -99,7 +114,7 @@
                                          role="list" aria-labelledby="dropdown02">
                                         @foreach($programs as $program)
                                         <div role="listitem">
-                                            <a class="dropdown-item" href="/programs/{{$program->slug}}" accesskey="ر">
+                                            <a class="dropdown-item" href="/program/{{$program->slug}}" accesskey="ر">
                                                 <div
                                                     class="d-flex align-items-center align-items-md-start align-items-md-center flex-row flex-md-column">
                                                     <img loading="lazy" src="{{ Storage::url($program->icon) }}" alt="" />
@@ -139,7 +154,7 @@
                                    accesskey="ء">سفراء غراس</a>
                             </li>
                         </ul>
-                        <a class="btn btn-gradient px-lg-5 d-none d-md-block" href="/all">تبرع
+                        <a class="btn btn-gradient px-lg-5 d-none d-md-block" href="{{ route('donate') }}">تبرع
                             الآن</a>
                     </div>
                     <div class="d-block d-md-none">

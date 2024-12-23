@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Auth\UserAuthController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,12 +14,6 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/', function () {
-    return view('frontend.home');
-});
-
-Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
 
 Auth::routes();
 
@@ -35,3 +31,30 @@ Route::group([
     Route::resource('transactions', App\Http\Controllers\TransactionController::class);
     Route::resource('programs', App\Http\Controllers\ProgramController::class);
 });
+
+Route::resource('clients', App\Http\Controllers\ClientController::class);
+
+Route::prefix('user')->name('user.')->group(function () {
+    Route::middleware('guest:client')->group(function () {
+        Route::get('login', [UserAuthController::class, 'showLoginForm'])->name('login');
+        Route::post('login', [UserAuthController::class, 'login']);
+
+        Route::get('register', [UserAuthController::class, 'showRegisterForm'])->name('register');
+        Route::post('register', [UserAuthController::class, 'register']);
+    });
+
+    Route::middleware('auth:client')->group(function () {
+        Route::post('logout', [UserAuthController::class, 'logout'])->name('logout');
+        Route::get('dashboard', [UserAuthController::class, 'dashboard'])->name('dashboard');
+    });
+});
+
+Route::get('/', function () {
+    return view('frontend.home');
+})->name('homepage');
+
+Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
+Route::get('/campaign/{id}', [HomeController::class, 'campaign'])->name('campaign');
+Route::get('/donate', [HomeController::class, 'donate'])->name('donate');
+Route::get('/category/{slug}', [HomeController::class, 'category'])->name('category');
+Route::get('/program/{slug}', [HomeController::class, 'program'])->name('program');

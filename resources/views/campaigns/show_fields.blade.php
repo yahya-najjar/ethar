@@ -10,6 +10,12 @@
     <p>{{ $campaign->category_id }}</p>
 </div>
 
+<!-- Program Id Field -->
+<div class="col-sm-12">
+    {!! Form::label('program_id', 'Program Id:') !!}
+    <p>{{ $campaign->program_id }}</p>
+</div>
+
 <!-- Title Field -->
 <div class="col-sm-12">
     {!! Form::label('title', 'Title:') !!}
@@ -34,22 +40,40 @@
     <p>{{ $campaign->raised_amount }}</p>
 </div>
 
-<!-- Start Date Field -->
+<!-- Visits Field -->
 <div class="col-sm-12">
-    {!! Form::label('start_date', 'Start Date:') !!}
-    <p>{{ $campaign->start_date }}</p>
+    {!! Form::label('visits', 'Visits:') !!}
+    <p>{{ $campaign->visits }}</p>
 </div>
 
-<!-- End Date Field -->
+<!-- Beneficiaries Goal Field -->
 <div class="col-sm-12">
-    {!! Form::label('end_date', 'End Date:') !!}
-    <p>{{ $campaign->end_date }}</p>
+    {!! Form::label('beneficiaries_goal', 'Beneficiaries Goal:') !!}
+    <p>{{ $campaign->beneficiaries_goal }}</p>
+</div>
+
+<!-- Beneficiaries Count Field -->
+<div class="col-sm-12">
+    {!! Form::label('beneficiaries_count', 'Beneficiaries Count:') !!}
+    <p>{{ $campaign->beneficiaries_count }}</p>
 </div>
 
 <!-- Status Field -->
 <div class="col-sm-12">
     {!! Form::label('status', 'Status:') !!}
     <p>{{ $campaign->status }}</p>
+</div>
+
+<!-- City Field -->
+<div class="col-sm-12">
+    {!! Form::label('city', 'City:') !!}
+    <p>{{ $campaign->city }}</p>
+</div>
+
+<!-- Image Field -->
+<div class="col-sm-12">
+    {!! Form::label('image', 'Image:') !!}
+    <p>{{ $campaign->image }}</p>
 </div>
 
 <!-- Created At Field -->

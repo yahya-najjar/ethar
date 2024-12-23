@@ -7,6 +7,7 @@ use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 abstract class BaseRepository
 {
@@ -102,7 +103,19 @@ abstract class BaseRepository
      */
     public function create(array $input): Model
     {
+        if (isset($input['image']) && $input['image'] instanceof \Illuminate\Http\UploadedFile) {
+            $path = Storage::disk('public')->put('campaigns', $input['image']);
+            $input['image'] = $path;
+        }
+
+
+        if (isset($input['icon']) && $input['icon'] instanceof \Illuminate\Http\UploadedFile) {
+            $path = Storage::disk('public')->put('campaigns', $input['icon']);
+            $input['icon'] = $path;
+        }
+
         $model = $this->model->newInstance($input);
+
 
         $model->save();
 
@@ -131,6 +144,25 @@ abstract class BaseRepository
         $query = $this->model->newQuery();
 
         $model = $query->findOrFail($id);
+
+        if (isset($input['image']) && $input['image'] instanceof \Illuminate\Http\UploadedFile) {
+            if ($model->image && Storage::disk('public')->exists($model->image)) {
+                Storage::disk('public')->delete($model->image);
+            }
+
+            $path = Storage::disk('public')->put('campaigns', $input['image']);
+            $input['image'] = $path;
+        }
+
+        if (isset($input['icon']) && $input['icon'] instanceof \Illuminate\Http\UploadedFile) {
+            if ($model->icon && Storage::disk('public')->exists($model->icon)) {
+                Storage::disk('public')->delete($model->icon);
+            }
+
+            $path = Storage::disk('public')->put('campaigns', $input['icon']);
+            $input['icon'] = $path;
+        }
+
 
         $model->fill($input);
 

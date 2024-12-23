@@ -98,104 +98,13 @@
                     <div class="row mb-0 mb-sm-4 cards-wrapper" role="region" aria-label="المشاريع الموصى بها">
                         <h3 class="visually-hidden">المشاريع الموصى بها</h3>
 
-                        <div class="col-md-6 col-xl-4 col-12 mb-3 mb-xl-0 pb-3">
-                            <div class="card card-shadow pt-2 pb-3 pe-3 ps-3">
-                                <div class="custom-card-header d-flex justify-content-between align-items-center">
-                                    <a class="card-details-link"  href="/projects/0/48100?amount=null" role="link" tabindex="0" >
-                                        <h6 class="title text-truncate " aria-level="4">&#x62A;&#x648;&#x641;&#x64A;&#x631; &#x627;&#x644;&#x643;&#x633;&#x648;&#x629; &#x644;&#x644;&#x645;&#x62A;&#x639;&#x641;&#x641;&#x64A;&#x646;</h6>
-                                    </a>
-                                    <button class="btn share-icon-btn share-help ghiras_share" data-caseId="48100" data-casetype="Project" data-caseTitle="&#x62A;&#x648;&#x641;&#x64A;&#x631; &#x627;&#x644;&#x643;&#x633;&#x648;&#x629; &#x644;&#x644;&#x645;&#x62A;&#x639;&#x641;&#x641;&#x64A;&#x646;" title="شارك التبرع عبر وسائل التواصل الاجتماعي" aria-label="مشاركة &#x62A;&#x648;&#x641;&#x64A;&#x631; &#x627;&#x644;&#x643;&#x633;&#x648;&#x629; &#x644;&#x644;&#x645;&#x62A;&#x639;&#x641;&#x641;&#x64A;&#x646;"><i class="fas fa-share-alt"></i></button>
-                                </div>
 
-                                <div class="my-1 project-item-details">
-
-                                    <a class="card-details-link"  href="/projects/0/48100?amount=null" role="presentation" tabindex="-1" >
-                                        <div class="project-img">
-                                            <img loading="lazy"
-                                                 class="h-100 w-100"
-                                                 src="https://ehsanimagesp.s3.me-south-1.amazonaws.com/P12632.jpg" onerror="this.src='/assets/images/Default_card.svg';this.onerror='';" width="316" height="155" alt="&#x62A;&#x648;&#x641;&#x64A;&#x631; &#x627;&#x644;&#x643;&#x633;&#x648;&#x629; &#x644;&#x644;&#x645;&#x62A;&#x639;&#x641;&#x641;&#x64A;&#x646;">
-                                            <div class="rangeslider1 w-100" id="js-rangeslider-0" aria-hidden="true">
-                                                24
-                                                <div class="rangeslider-fill-lower">
-                                                    <div class="rangeslider-thumb" id="donut-48100" style="width: 24%" role="slider" aria-valuemin="0" aria-valuenow="24" aria-valuemax="100" aria-label="تم جمع">
-                                                        <div class="range-output" style="transform: rotate(0deg);">
-                                                            <output class="output" name="output" for="range">24%</output>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <style>
-                                                    #donut-48100 {
-                                                        width: 24%;
-                                                        animation: donutLoad-48100 2s ease;
-                                                        animation-direction: alternate;
-                                                    }
-
-                                                    @keyframes donutLoad-48100 {
-                                                        0%   {width: 0;}
-                                                        100% {width: 24%;}
-                                                    }
-                                                </style>                    </div>
-                                        </div>
-                                    </a>
-                                    <div class="row mt-2">
-                                        <div class="col">
-                                            <small class="text-primary-green">تم جمع</small>
-                                            <label class="text-primary-blue d-block h6 font-semibold">90,492<small class="ms-1 text-nowrap">ر.س</small><span class="visually-hidden">(24%)</span></label>
-                                        </div>
-                                        <div class="col">
-                                            <small class="text-primary-green">المبلغ المتبقي</small>
-                                            <label class="text-primary-blue d-block h6 font-semibold MaxValSpan">283,908<small class="ms-1 text-nowrap">ر.س</small></label>
-                                        </div>
-                                    </div>
-                                    <div class="MaxValueBox">
-                                        <span class="MaxValueBoxTitle">أعلى قيمة يمكنك التبرع بها</span>
-                                        <span class="MaxValueBoxValue">283,908</span>
-                                    </div>
-                                </div>
-
-                                <!-- actions -->
-
-                                <input type="hidden" name="id" value="48100" />
-                                <input type="hidden" name="title" value="&#x62A;&#x648;&#x641;&#x64A;&#x631; &#x627;&#x644;&#x643;&#x633;&#x648;&#x629; &#x644;&#x644;&#x645;&#x62A;&#x639;&#x641;&#x641;&#x64A;&#x646;" />
-                                <input type="hidden" name="type" value="Project" />
-                                <input type="hidden" name="contributionType" value="&#x635;&#x62F;&#x642;&#x629;" />
-                                <input type="hidden" name="AttachmentURL" value="https://ehsanimagesp.s3.me-south-1.amazonaws.com/P12632.jpg" />
-                                <div class="d-flex cart-wrapper" data-id="48100">
-                                    <div class="addToCartWrapper  w-100 d-flex">
-                                        <div class="price-details">
-                                            <input class="float-start cart-amount only-number" placeholder="مبلغ التبرع" name="cartamount"
-                                                   autocomplete="off"
-                                                   id="item-48100-amount"
-                                                   inputmode="numeric" pattern="\d*"
-                                                   data-val-range-min="0"
-                                                   data-val-range-max="283908.00" data-val-range="****" data-val="true" data-val-number="ارقام" aria-label="مبلغ التبرع - &#x62A;&#x648;&#x641;&#x64A;&#x631; &#x627;&#x644;&#x643;&#x633;&#x648;&#x629; &#x644;&#x644;&#x645;&#x62A;&#x639;&#x641;&#x641;&#x64A;&#x646; (ريال سعودي)" />
-                                            <span class="text-light-grey float-end" aria-hidden="true">ر.س</span>
-                                        </div>
-
-                                        <button class="btn btn-primary-blue flex-grow-1 mx-2 rounded-pill donate-now" type="button"
-                                                onclick="navigateToDonation(this, '/projects/0/48100', 48100)">
-                                            تبرع الآن
-                                        </button>
-
-                                        <button class="add-to-cart border-0 btn-primary-green btn-round-icon fa-cart-plus fas fs-5" data-url="/projects/0/48100?amount=null" data-initiativetypeid="1" data-maxAmount="283908.00" data-id="48100" data-title="&#x62A;&#x648;&#x641;&#x64A;&#x631; &#x627;&#x644;&#x643;&#x633;&#x648;&#x629; &#x644;&#x644;&#x645;&#x62A;&#x639;&#x641;&#x641;&#x64A;&#x646;" data-type="Project" data-type-name="Project" data-contribution-type="&#x635;&#x62F;&#x642;&#x629;" data-attachment="https://ehsanimagesp.s3.me-south-1.amazonaws.com/P12632.jpg" aria-label="إضافة &#x62A;&#x648;&#x641;&#x64A;&#x631; &#x627;&#x644;&#x643;&#x633;&#x648;&#x629; &#x644;&#x644;&#x645;&#x62A;&#x639;&#x641;&#x641;&#x64A;&#x646; إلى سلة تبرعاتك">
-                                        </button>
-                                    </div>
-                                    <div class="d-none removeFromCartWrapper d-flex flex-fill justify-content-between">
-                                        <button class="btn btn-link remove-from-cart text-grey-3" data-id="48100" data-initiativetypeid="1" aria-label="إزالة &#x62A;&#x648;&#x641;&#x64A;&#x631; &#x627;&#x644;&#x643;&#x633;&#x648;&#x629; &#x644;&#x644;&#x645;&#x62A;&#x639;&#x641;&#x641;&#x64A;&#x646;  من سلة تبرعاتك">
-                                            ازالة
-                                        </button>
-                                        <label class="addedToCart align-items-center bg-grey-1 d-flex px-5 rounded-pill text-grey-3">مضاف لسلة تبرعاتك <i class="fas fa-cart-plus ms-1"></i></label>
-                                    </div>
-                                </div>        <hr />
-                                <div class="text-center">
-                                    <a type="button" class="btn btn-block btn-sm p-0 text-muted" href="/projects/0/48100?amount=null" tabindex="-1" aria-hidden="true"><span>تفاصيل الحالة</span></a>
-                                </div>
-                            </div>
-                        </div>
+                        @foreach($category->campaigns as $campaign)
+                            @include('frontend.campaign-card', ['campaign' => $campaign])
+                        @endforeach
                      </div>
                     <div class="text-center mb-sm-5 mt-5 MobileBtn">
-                        <a class="btn btn-primary-green rounded-pill px-5" aria-label="المزيد من المشاريع" href="/projects">المزيد من المشاريع</a>
+                        <a class="btn btn-primary-green rounded-pill px-5" aria-label="المزيد  " href="/category/{{$category->slug}}">المزيد  </a>
                     </div>
                 </div>
             </div>

@@ -14,12 +14,15 @@ class DatabaseSeeder extends Seeder
     {
         User::query()->create([
             'name' => 'Admin User',
-            'email' => 'admin@example.com',
+            'email' => 'admin@ethar.com',
             'password' => bcrypt('password'),
         ]);
 
         $this->call(CategorySeeder::class);
         $this->call(ProgramsSeeder::class);
+        $this->call(CharitySeeder::class);
+        $this->call(CampaignSeeder::class);
+        $this->call(ClientSeeder::class);
 
     }
 }

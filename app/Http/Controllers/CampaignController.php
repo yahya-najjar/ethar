@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateCampaignRequest;
 use App\Http\Controllers\AppBaseController;
 use App\Models\Category;
 use App\Models\CharityOrganization;
+use App\Models\Program;
 use App\Repositories\CampaignRepository;
 use Illuminate\Http\Request;
 use Flash;
@@ -37,9 +38,11 @@ class CampaignController extends AppBaseController
      */
     public function create()
     {
-        $categories = Category::query()->get();
         $charities = CharityOrganization::query()->get();
-        return view('campaigns.create', compact('categories', 'charities'));
+        $categories = Category::query()->get();
+        $programs = Program::query()->get();
+
+        return view('campaigns.create', compact('charities', 'categories', 'programs'));
     }
 
     /**
@@ -84,10 +87,12 @@ class CampaignController extends AppBaseController
 
             return redirect(route('campaigns.index'));
         }
-        $categories = Category::query()->get();
-        $charities = CharityOrganization::query()->get();
 
-        return view('campaigns.edit', compact('campaign', 'categories', 'charities'));
+        $charities = CharityOrganization::query()->get();
+        $categories = Category::query()->get();
+        $programs = Program::query()->get();
+
+        return view('campaigns.edit', compact('campaign', 'charities', 'categories', 'programs'));
     }
 
     /**
@@ -95,6 +100,7 @@ class CampaignController extends AppBaseController
      */
     public function update($id, UpdateCampaignRequest $request)
     {
+
         $campaign = $this->campaignRepository->find($id);
 
         if (empty($campaign)) {
